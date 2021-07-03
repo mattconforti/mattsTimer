@@ -2,6 +2,7 @@
 // implemented in every browser? may need a workaround
 let beep_audio = new Audio('beep.mp3');
 
+// NEED TO FIX LOGIC FOR REFORMATTED INPUT
 function start_countdown() {
     var time = parseInt(document.getElementById('time_label').value);
     // if time < 60 sec, reformat! to the way you want it!!

@@ -7,11 +7,18 @@
         <meta name="author" content="Matt Conforti">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Matt's Timer</title>
-        <link rel="stylesheet" type='text/css' href="styles/style.css">
+        <!-- Google Font API -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=PT+Serif&display=swap" rel="stylesheet">
+        <!---->
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
     </head>
     <body>
         <div id="timer_box">
-            <input type="text" id="time_label" size="6" maxlength="6">
+            <div id="input_box">
+                <input type="text" id="hour_label" class="time_labels" size="2" maxlength="2" value="00">
+            </div>
             <button id="start_button">Start</button>
         </div>
     </body>
