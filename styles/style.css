@@ -20,13 +20,24 @@
 }
 
 .time_labels {
+    float: left;
     border: 0;
     font-family: 'Orbitron', sans-serif;
     font-size: 20px;
     margin-top: 6px;
-    margin-left: 4px;
+    margin-left: 2px;
+    margin-right: 2px;
     padding-left: 4px;
     padding-right: 3px;
+}
+
+.time_separators {
+    float: left;
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+    margin-top: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #start_button {
