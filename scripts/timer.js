@@ -2,8 +2,37 @@
 // implemented in every browser? may need a workaround
 let beep_audio = new Audio('beep.mp3');
 
-// NEED TO FIX LOGIC FOR REFORMATTED INPUT
 function start_countdown() {
+    let hours = parseInt(document.getElementById('hour_label').value);
+    let mins = parseInt(document.getElementById('min_label').value);
+    let seconds = parseInt(document.getElementById('sec_label').value);
+    console.log(`Starting time: ${hours}:${mins}:${seconds}`);
+
+    // INPUT REFORMATTING LOGIC HERE
+    // ADD '0' to number if necessary
+    if (hours.toString().length === 1) {
+        hours = '0' + hours.toString();
+        // update value with new format
+        document.getElementById('hour_label').value = hours;
+        // NEED TO MAKE FONT MONOSPACED BECAUSE '1' is smaller than '0' etc.
+        // funny looking spacing!!
+    }
+
+    if (mins.toString().length === 1) {
+        mins = '0' + mins.toString();
+        document.getElementById('min_label').value = mins;
+    }
+
+    if (seconds.toString().length === 1) {
+        seconds = '0' + seconds.toString();
+        document.getElementById('sec_label').value = seconds;
+    }
+
+    // if (seconds >= 60) {
+
+    // }
+
+    /*
     var time = parseInt(document.getElementById('time_label').value);
     // if time < 60 sec, reformat! to the way you want it!!
     if (!isNaN(time)) {  // if input is a number - do other checks? 
@@ -28,6 +57,7 @@ function start_countdown() {
     else {
         alert("Please enter a number!!!");
     }
+    */
 }
 
 document.getElementById('start_button').addEventListener('click', start_countdown);
