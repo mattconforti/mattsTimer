@@ -71,16 +71,28 @@ function start_countdown() {
 
     // print reformatted starting time for debugging
 
+    // INPUT VALIDATION HERE
     // need cases when 1 min goes down to 59 seconds, etc
     var my_interval = setInterval(() => {
-        if (seconds_val === '00') {
+        if (seconds_val === '00') {  // no seconds left
             // check how many minutes and hours are left
-            clearInterval(my_interval);
-            beep_audio.loop = true;
-            beep_audio.play();
-            setTimeout(() => beep_audio.loop = false, 10000);
+            if((mins_val === '00') && (hours_val === '00')) {
+                // TIMER DONE! STOP COUNTING & SOUND ALARM
+                clearInterval(my_interval);
+                beep_audio.loop = true;
+                beep_audio.play();
+                setTimeout(() => beep_audio.loop = false, 10000);
+            }
+            else {
+                // check how many minutes. if no minutes, check how many hours
+                // if minutes, start turning minutes into seconds
+                // if no minutes but hours, turn hours into minutes & seconds etc
+                // GET IT TO WORK NOW, REFACTOR & IMPROVE LOGIC LATER
+                // CAN ALSO LOOK AT OTHER PEOPLES SOLUTIONS FOR MORE REFACTORING
+                // & possible cleaning & simplification
+            }
         }
-        else {
+        else {  // more seconds left
             seconds_val--;
             if (seconds_val.toString().length === 1) {
                 seconds_val = '0' + seconds_val.toString();
