@@ -143,3 +143,4 @@ document.addEventListener('keyup', e => {
 // - user trying to enter a new time!
 
 // branch auto merging? no true master branch? confused
+// TRIED TO FIX BY CHANGING BRANCH NAME TO MASTER, & SETTING AS DEFAULT BRANCH! WORKED?
