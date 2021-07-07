@@ -72,6 +72,22 @@ function start_countdown() {
     // print reformatted starting time for debugging
 
     // need cases when 1 min goes down to 59 seconds, etc
+    var my_interval = setInterval(() => {
+        if (seconds_val === '00') {
+            // check how many minutes and hours are left
+            clearInterval(my_interval);
+            beep_audio.loop = true;
+            beep_audio.play();
+            setTimeout(() => beep_audio.loop = false, 10000);
+        }
+        else {
+            seconds_val--;
+            if (seconds_val.toString().length === 1) {
+                seconds_val = '0' + seconds_val.toString();
+            }
+            document.getElementById('sec_label').value = seconds_val;
+        }     
+    }, 1000);
 
     /*
     var time = parseInt(document.getElementById('time_label').value);
