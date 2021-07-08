@@ -97,6 +97,9 @@ function start_countdown() {
                     seconds_label.value = seconds_val;
                     return;  // next interval iteration
                 }
+                // LOGIC IS MESSED UP? NEED TO TEST MORE.
+                // EX - input 60 mins
+
                 // check how many minutes. if no minutes, check how many hours
                 // if minutes, start turning minutes into seconds
                 // if no minutes but hours, turn hours into minutes & seconds etc
