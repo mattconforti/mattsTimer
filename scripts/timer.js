@@ -84,6 +84,19 @@ function start_countdown() {
                 setTimeout(() => beep_audio.loop = false, 10000);
             }
             else {
+                if (mins_val === '00') {
+                    // theres only hours left
+                }
+                else {
+                    mins_val--;
+                    if (mins_val.toString().length === 1) {
+                        mins_val = '0' + mins_val.toString();
+                    }
+                    mins_label.value = mins_val;
+                    seconds_val = 59;  // DOES THIS LOSE A SECOND??
+                    seconds_label.value = seconds_val;
+                    return;  // next interval iteration
+                }
                 // check how many minutes. if no minutes, check how many hours
                 // if minutes, start turning minutes into seconds
                 // if no minutes but hours, turn hours into minutes & seconds etc
@@ -144,3 +157,4 @@ document.addEventListener('keyup', e => {
 
 // branch auto merging? no true master branch? confused
 // TRIED TO FIX BY CHANGING BRANCH NAME TO MASTER, & SETTING AS DEFAULT BRANCH! WORKED?
+// SHOULD BE FIXED NOW!!
