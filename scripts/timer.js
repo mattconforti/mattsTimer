@@ -1,6 +1,22 @@
+// NOTE - TIMER IS SLOWWWWWWWW. TESTED IT VS. IPHONE TIMER! need a closer look
+// test to figure out whats going on. where & why is it slow? where does it start
+// to get slower vs an already established timer?? b/c based on computer clock? 
+// would run slower/faster on a different machine?? may need a more accurate 1000ms
+// in setInterval!!
+
 // define audio variable
 // implemented in every browser? may need a workaround
 let beep_audio = new Audio('beep.mp3');
+
+// REFACTOR CODE TO HAVE ALL LABELS AT THE TOP OF THE PROGRAM - will need them
+// in just about every function
+function resetTimer() {
+    let labels = document.getElementsByClassName('time_labels');
+    for(let i = 0; i < labels.length; i++) {
+        labels[i].value = '00';
+        // STOP THE COUNTDOWN!!!! but how?? interval not visible here is it?
+    }
+}
 
 function start_countdown() {
     let hours_label = document.getElementById('hour_label');
@@ -157,7 +173,7 @@ document.addEventListener('keyup', e => {
 
 // if at any point the input box is clicked into - stop the timer (if it has started!!)!!
 // - user trying to enter a new time!
-
-// branch auto merging? no true master branch? confused
-// TRIED TO FIX BY CHANGING BRANCH NAME TO MASTER, & SETTING AS DEFAULT BRANCH! WORKED?
-// SHOULD BE FIXED NOW!!
+input_boxes = document.getElementsByClassName('time_labels');
+for (let c = 0; c < input_boxes.length; c++) {  // use foreach instead??
+    input_boxes[c].addEventListener('click', resetTimer);
+}
